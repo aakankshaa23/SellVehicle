@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.dextroxd.sellvehicle.cardActivity.cardActivity;
 import com.dextroxd.sellvehicle.exploreFragment.model_explore.ModelCard;
 import com.dextroxd.sellvehicle.R;
+import com.dextroxd.sellvehicle.network.PostProperty.model.Response;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.MyViewHolder>{
     private TextView cost,bedroom,furnishing;
     private ImageView image_house;
     private Context context;
-    private List<ModelCard> houseList;
+    private List<Response> houseList;
      ImageView like_button;
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView cost, bedroom, size;
@@ -37,7 +38,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.MyViewHolder>{
             like_button=(ImageView)view.findViewById(R.id.likebutton);
         }
     }
-    public GridAdapter(Context context,List<ModelCard> houseList) {
+    public GridAdapter(Context context,List<Response> houseList) {
         this.context=context;
         this.houseList = houseList;
     }
@@ -80,22 +81,22 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.MyViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        final ModelCard modelCard = houseList.get(i);
-        myViewHolder.cost.setText(modelCard.getCost());
-        myViewHolder.bedroom.setText(modelCard.getBedroom());
-        myViewHolder.size.setText(modelCard.getFurnishing());
-
-        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent in =new Intent(v.getContext(),cardActivity.class);
-              in.putExtra("cost",modelCard.getCost());
-              in.putExtra("bedroom",modelCard.getBedroom());
-              in.putExtra("size",modelCard.getFurnishing());
-              context.startActivity(in);
-
-            }
-        });
+        Response response = houseList.get(i);
+        myViewHolder.cost.setText(response.getPrice());
+        myViewHolder.bedroom.setText(response.getBedroom());
+        myViewHolder.size.setText(response.getArea());
+//
+//        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent in =new Intent(v.getContext(),cardActivity.class);
+//              in.putExtra("cost",modelCard.getCost());
+//              in.putExtra("bedroom",modelCard.getBedroom());
+//              in.putExtra("size",modelCard.getFurnishing());
+//              context.startActivity(in);
+//
+//            }
+//        });
 
     }
 

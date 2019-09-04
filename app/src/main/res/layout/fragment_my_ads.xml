@@ -4,14 +4,15 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    tools:context=".myAds.MyAdsFragment">
+    tools:context=".myAds.MyAdsFragment"
+    android:background="#F0181E34">
 
     <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.Toolbar
         android:id="@+id/id_actionBar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/myads_color"
+        android:background="@drawable/toolbar_gradient"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,7 +41,7 @@
         app:menu="@menu/top_navigation"
         android:layout_alignParentTop="true"
         android:id="@+id/nav_bar_1"
-        android:background="@drawable/myads_color"/>
+        android:background="@drawable/toolbar_gradient"/>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"

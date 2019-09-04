@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="exploreFragment.ExploreFragment"
-    android:background="#302A2A">
+    android:background="#F0181E34">
     <LinearLayout
         android:layout_width="match_parent"
         android:id="@+id/id_layout_explore"

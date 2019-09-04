@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Login_and_signup.SignUpActivity"
     android:focusableInTouchMode="false"
-    android:background="#302A2A"
+    android:background="#181e34"
     android:paddingBottom="18dp">
     <ScrollView
         android:layout_width="match_parent"

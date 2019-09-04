@@ -1,12 +1,19 @@
 package com.dextroxd.sellvehicle.activities;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dextroxd.sellvehicle.R;
+import com.dextroxd.sellvehicle.exploreFragment.ExploreFragment;
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrInterface;
 
 /*
 rent_seekbar for rent, Duration_seekbar for duration of stay, distance_seekbar for distance from location
@@ -43,6 +50,8 @@ selected_furnishing==3 for fully furnished
 public class filterActivity extends AppCompatActivity {
 SeekBar rent_seekbar,duration_seekbar,distance_seekbar;
 TextView text_rent,text_duration,text_distance;
+    private SlidrInterface slidr;
+private float x1,x2,MIN_DISTANCE=2;
 int max=50000;int min=1000;int current=10000;// max , min,current are related to rent_seekbar
 int min2=2,max2=60,current2=30;//min2,max2,current2 are related to duration_seekbar
 int max1=100,min1=0,current1=50;//max1,min1,current1 are related to distance_Seekbar
@@ -51,6 +60,19 @@ int selected_housefor=0,selected_bedroom=0,selected_furnishing=0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
+        Toolbar toolbar=findViewById(R.id.toolbar_filter);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("FILTER");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
+        slidr = Slidr.attach(this);
 
 
         text_rent=(TextView)findViewById(R.id.textView);
@@ -206,4 +228,5 @@ int selected_housefor=0,selected_bedroom=0,selected_furnishing=0;
         });
 
     }
+
 }

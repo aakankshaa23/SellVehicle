@@ -5,67 +5,40 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.viewEditProfile">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:alpha="1"
-        android:layout_height="wrap_content"
-        android:background="@drawable/myads_color"
-        android:elevation="20dp">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/image_user"
-            android:src="@drawable/ic_man_user"
-            android:padding="20dp"
-            android:background="@drawable/round_back"
-
-
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"/>
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NAME"
-            android:padding="10dp"
-            android:id="@+id/name_user"
-            android:layout_below="@id/image_user"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:textSize="30dp"
-            android:fontFamily="@font/psr"
-            android:textColor="#000000"/>
-
-    </RelativeLayout>
+    tools:context=".activities.viewEditProfile"
+    android:background="#F0181E34">
+   <include
+       layout="@layout/bar_layout"
+       android:id="@+id/toolbar_view"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change Email"
+        android:text="Change Username"
         android:layout_marginTop="30dp"
+        android:id="@+id/change_name"
+        android:fontFamily="@font/psr"
         android:textSize="20dp"
-        android:textColor="#01579B"/>
-
-    <EditText
-        style="@android:style/Widget.Holo.EditText"
-        android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:textColor="#84ffff" />
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true" />
+        android:text="Change Password"
+        android:layout_marginTop="30dp"
+        android:id="@+id/change_password"
+        android:textSize="20dp"
+        android:fontFamily="@font/psr"
+        android:layout_marginLeft="16dp"
+        android:textColor="#84ffff" />
     <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Change Phone Number"
+        android:fontFamily="@font/psr"
+        android:id="@+id/change_phone"
     android:layout_marginTop="30dp"
-    android:textSize="20dp"
-    android:textColor="#01579B"/>
-
-    <EditText
-        android:id="@+id/editText4"
-        style="@android:style/Widget.Holo.EditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="phone" />
+        android:layout_marginLeft="16dp"
+        android:textSize="20dp"
+    android:textColor="#84ffff"/>
 
 </LinearLayout>
