@@ -88,7 +88,6 @@ public class ExploreFragment extends Fragment implements Animation.AnimationList
         mApiInterface.getProperty().enqueue(new Callback<List<Response>>() {
             @Override
             public void onResponse(Call<List<Response>> call, retrofit2.Response<List<Response>> response) {
-                skeletonScreen.hide();
                 Log.e("Hell",response.body().toString());
                 responsesProperty = response.body();
                 gridAdapter.notifyDataSetChanged();
